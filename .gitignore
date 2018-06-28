@@ -1,0 +1,19 @@
+# Exclude all files/directories except the ones I want
+/*
+
+# .gitignore
+!.gitignore
+
+# Readme
+!README.md
+
+# TeX File
+!onlinecom.tex
+
+# Bib Files
+!onlinecom.bib
+
+# IEEE style files
+!ieeeconf.cls
+!IEEEtran.bst
+!IEEEabrv.bib
