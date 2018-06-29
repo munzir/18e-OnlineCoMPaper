@@ -22,6 +22,7 @@ Note: Make sure to compile with `latex` once, `bibtex` once, and then `latex` tw
 
 3: View the compiled pdf (`onlinecom.pdf`) file using your favorite pdf viewer
 
-IEEE PDF Compliance
+## IEEE PDF Compliance
+
 - [IEEE LaTeX Support Page](http://ras.papercept.net/conferences/support/tex.php)
 - [PDF Test](http://ras.papercept.net/conferences/scripts/pdftest.pl)
