@@ -22,5 +22,7 @@
 ## Pose Generation/Filtering Algorithm
 !/paper_prep/
 /paper_prep/*
+!/paper_prep/ieeeconf.cls
+!/paper_prep/IEEEtran.bst
 !/paper_prep/pose_generation.tex
 !/paper_prep/pose_generation.pdf

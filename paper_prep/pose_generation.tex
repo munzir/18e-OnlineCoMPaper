@@ -2,12 +2,21 @@
 %% Author: Akash Patel
 
 %% Doc Prep
-\documentclass[10pt, letterpaper]{article}
-\usepackage[margin = 1 in]{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage{indentfirst}
+\documentclass[letterpaper, 10pt, conference]{ieeeconf}
+\IEEEoverridecommandlockouts
+
+
+%% Packages
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{algorithm,algorithmic}
+
+%% Command for formatting argmax
+\DeclareMathOperator*{\argmax}{argmax}
+
+%% Algorithm Package (removes the first and last row line separators
+%\floatstyle{plaintop}
+%\restylefloat{algorithm}
 
 %% Title
 \title{Pose Generation Algorithm}
@@ -18,8 +27,15 @@
 \begin{document}
 
 \maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
 
-%% Content First Part
+\begin{abstract}
+
+//TODO
+
+\end{abstract}
+
 \section{Purpose}
 
 The goal of this algorithm is to generate a good set of training poses. A "good"
@@ -34,27 +50,93 @@ have good predictions for a test set of poses.
 
 The first step is to generate a set of poses to filter. This is done through
 random sampling of the entire joint space, specifically the subset of the joint
-space in which the pose is balanced and safe.
+space in which the pose is balanced and safe. \textbf{Algorithm 1} describes the
+approach implemented.
 
 \subsubsection{Balanced}
 A balanced pose is defined to be a pose in which the $x_{COM}$ is close to
 zero. The pose's $x_{COM}$ is determined using DART. Poses in which their
 $x_{COM}$ is lower than some threshold are then considered balanced. The
 threshold used in our case is 1 mm. The balanced pose of any pose is determined
-using \texttt{nlopt}, an optimization library.
+using \texttt{nlopt}, an optimization library. //TODO can explain the
+optimization in more detail
 
 \subsubsection{Safe}
 A safe pose is defined to be a pose that has no collision. This includes
 self-collision as well as collision with a flat ground. Collision is implemented
-using DART's collision detector with a 3D robot model as input.
+using DART's collision detector with a 3D robot model as input. //TODO can
+explain collision boxes of the model
 
 \subsection{Filtering}
 After we obtain a distribution of randomly sampled balanced and safe poses we
 need to determine which poses from this set are "good" poses. A filtering
-algorithm is used
+algorithm is devised based on discarding poses with a relatively small gradient and
+learning on the poses which result in a large gradient.
+
+//TODO
+
+\textbf{Algorithm 2} describes the filtering procedure.
 
 \section{Complete Algorithm}
 
 %% useful stuff mathbf texttt
+
+\begin{algorithm}
+    \caption{Pose Generation}
+    \begin{algorithmic}[1]
+        \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+        \renewcommand{\algorithmicensure}{\textbf{Output:}}
+        \REQUIRE $n_{poses}$
+        \ENSURE  $\bar{q} $ (balanced and safe set of poses)
+        \STATE $j = 0$
+        \WHILE {$j < n_{poses}$}
+        \STATE $q_j $ = Randomly generated pose
+        \STATE $\bar{q}_i =$ balanced pose of $q_j$
+        \IF {$\bar{q}_i$'s $ x_{com} <= x_{tol} $ and $\bar{q}_i$ is safe}
+        \STATE Add $\bar{q}_i $ to $\bar{q}$
+        \ENDIF
+        \STATE $ j = j + 1 $
+        \ENDWHILE
+        \RETURN $\bar{q}$
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Pose Filtering}
+    \begin{algorithmic}[1]
+        \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+        \renewcommand{\algorithmicensure}{\textbf{Output:}}
+        \REQUIRE $\bar{q} \in \mathbb{R}^{n_{DOF} \times n_{poses}}$ (input set
+        of poses),
+        \newline $\Phi \in \mathbb{R}^{n_{poses} \times dim(\beta)}$ ($\phi(q)$ evaluated at each given pose),
+        \newline $\bar{\beta} \in \mathbb{R}^{dim(\beta) \times n_{\beta}}$ (set of initial $\beta$)
+        \ENSURE  $\widetilde{q}$ (filtered set of poses)
+        \STATE $ j = 0 $
+        \WHILE {$j < n_{poses}$}
+        \STATE $i^* = \argmax_i \sum_k | \Phi_i \beta_k |$
+        \STATE $\phi^* = \Phi_{i^{*}}$
+        \STATE $j = j + 1$
+        \STATE $\widetilde{q}_j = \bar{q}_{i^*} $
+        \STATE $\beta_k = \beta_k - \eta \cdot \phi^* \beta_k \cdot \phi^* \quad \forall \quad k \in \{1, ..., n_\beta \}$
+        \IF {$ | \phi^* \beta_k | < x_{tol} \quad \forall \quad k \in \{1,
+        ..., n_\beta \} $ for last few iterations}
+        \STATE go to step 15
+        \ELSE
+        \STATE $\Phi = \Phi $ without $ \Phi_{i^*} $
+        \STATE $\bar{q} = \bar{q} $ without $ \bar{q}_{i^*} $
+        \ENDIF
+        \ENDWHILE
+        \RETURN $\bar{q}$
+    \end{algorithmic}
+\end{algorithm}
+
+\section{Experiment}
+
+//TODO
+
+\section{Results}
+
+//TODO
+Add some good plots
 
 \end{document}
