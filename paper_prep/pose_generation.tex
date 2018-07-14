@@ -1,0 +1,60 @@
+%% Pose Generation Algorithm for Online COM Project
+%% Author: Akash Patel
+
+%% Doc Prep
+\documentclass[10pt, letterpaper]{article}
+\usepackage[margin = 1 in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%% Title
+\title{Pose Generation Algorithm}
+\author{Akash Patel\\ Krang Lab Group}
+\date{July 2018}
+
+
+\begin{document}
+
+\maketitle
+
+%% Content First Part
+\section{Purpose}
+
+The goal of this algorithm is to generate a good set of training poses. A "good"
+set of poses is defined with the following metric. Performing a learning
+algorithm (gradient descent in this case) on this set of poses should result in
+convergence of all reasonable initial $\beta$s and the converged values should
+have good predictions for a test set of poses.
+
+\section{Explanation}
+
+\subsection{Random Pose Generation}
+
+The first step is to generate a set of poses to filter. This is done through
+random sampling of the entire joint space, specifically the subset of the joint
+space in which the pose is balanced and safe.
+
+\subsubsection{Balanced}
+A balanced pose is defined to be a pose in which the $x_{COM}$ is close to
+zero. The pose's $x_{COM}$ is determined using DART. Poses in which their
+$x_{COM}$ is lower than some threshold are then considered balanced. The
+threshold used in our case is 1 mm. The balanced pose of any pose is determined
+using \texttt{nlopt}, an optimization library.
+
+\subsubsection{Safe}
+A safe pose is defined to be a pose that has no collision. This includes
+self-collision as well as collision with a flat ground. Collision is implemented
+using DART's collision detector with a 3D robot model as input.
+
+\subsection{Filtering}
+After we obtain a distribution of randomly sampled balanced and safe poses we
+need to determine which poses from this set are "good" poses. A filtering
+algorithm is used
+
+\section{Complete Algorithm}
+
+%% useful stuff mathbf texttt
+
+\end{document}

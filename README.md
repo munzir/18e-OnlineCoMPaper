@@ -26,3 +26,14 @@ Note: Make sure to compile with `latex` once, `bibtex` once, and then `latex` tw
 
 - [IEEE LaTeX Support Page](http://ras.papercept.net/conferences/support/tex.php)
 - [PDF Test](http://ras.papercept.net/conferences/scripts/pdftest.pl)
+
+## Paper Prep
+This folder contains small TeX files serving as drafts.
+
+# Build and Run
+Since these files will not be submitted to IEEE, there is no need to perform the
+complex build procedure mentioned above. You can just:
+
+    pdflatex {TeX filename}
+
+to produce an output pdf file.
