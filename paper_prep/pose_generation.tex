@@ -73,7 +73,12 @@ need to determine which poses from this set are "good" poses. A filtering
 algorithm is devised based on discarding poses with a relatively small gradient and
 learning on the poses which result in a large gradient.
 
-//TODO
+At every update step, the pose with the largest total difference of the predicted
+$x_{COM}$ value ($\Phi_i \beta$) is used. This ensures that only poses with a
+large enough stepsize are used and not poses in which the $\beta$s values would
+change very little. The stopping condition for this filtering is either if we
+run out of poses to learn on or that any learning we do results in an $x_{COM}$
+of less than the $x_{COM}$ tolerance level decided (such as 2 mm).
 
 \textbf{Algorithm 2} describes the filtering procedure.
 
