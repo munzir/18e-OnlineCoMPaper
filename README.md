@@ -1,5 +1,5 @@
 # 18e: Online CoM Paper
-A repo that contains the files for IEEE Humanoids Submission
+A repo that contains the files for the Online Center of Mass Estimation Paper
 
 ## Dependencies
 
