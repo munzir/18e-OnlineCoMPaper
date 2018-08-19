@@ -30,7 +30,7 @@ Note: Make sure to compile with `latex` once, `bibtex` once, and then `latex` tw
 ## Paper Prep
 This folder contains small TeX files serving as drafts.
 
-# Build and Run
+### Build and Run
 Since these files will not be submitted to IEEE, there is no need to perform the
 complex build procedure mentioned above. You can just:
 
