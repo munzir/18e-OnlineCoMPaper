@@ -3,7 +3,7 @@ A repo that contains the files for the Online Center of Mass Estimation Paper
 
 ## Dependencies
 
-- A LaTeX distribution (such as [TeX Live](www.tug.org/texlive/))
+- A LaTeX distribution (such as [TeX Live](https://www.tug.org/texlive/))
 
 ## Build and Run
 
