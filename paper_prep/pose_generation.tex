@@ -23,7 +23,6 @@
 \author{Akash Patel\\ Krang Lab Group}
 \date{July 2018}
 
-
 \begin{document}
 
 \maketitle
@@ -33,6 +32,10 @@
 \begin{abstract}
 
 //TODO
+// Okay lets just brainstorm here what we need to write
+// 18a - Create Poses
+// 18c - Param Conv
+// 18f - Traj Planning
 
 \end{abstract}
 
@@ -49,29 +52,29 @@ have good predictions for a test set of poses.
 \subsection{Random Pose Generation}
 
 The first step is to generate a set of poses to filter. This is done through
-random sampling of the entire joint space, specifically the subset of the joint
-space in which the pose is balanced and safe. \textbf{Algorithm 1} describes the
+random sampling of the entire space, specifically the subset of the space in
+which the pose is balanced and safe. \textbf{Algorithm 1} describes the
 approach implemented.
 
 \subsubsection{Balanced}
 A balanced pose is defined to be a pose in which the $x_{COM}$ is close to
-zero. The pose's $x_{COM}$ is determined using DART. Poses in which their
-$x_{COM}$ is lower than some threshold are then considered balanced. The
-threshold used in our case is 1 mm. The balanced pose of any pose is determined
-using \texttt{nlopt}, an optimization library. //TODO can explain the
-optimization in more detail
+zero. The pose's $x_{COM}$ is determined using DART (citation needed). A
+balanced pose is found by moving the qBase angle by the same angle created from the vertical axis of
+the wheel axle and the $x_{COM}$ position, but in the opposite direction.
 
 \subsubsection{Safe}
 A safe pose is defined to be a pose that has no collision. This includes
 self-collision as well as collision with a flat ground. Collision is implemented
-using DART's collision detector with a 3D robot model as input. //TODO can
-explain collision boxes of the model
+using DART's collision detector using the 3D model of the robot. The collision
+detector does not flag adjacent bodies in contact as collisions. To account for
+conflicting adjacent bodies, the pose is passed through a filter of joint limits
+for each robot joint.
 
 \subsection{Filtering}
 After we obtain a distribution of randomly sampled balanced and safe poses we
 need to determine which poses from this set are "good" poses. A filtering
-algorithm is devised based on discarding poses with a relatively small gradient and
-learning on the poses which result in a large gradient.
+algorithm is devised based on discarding poses with a relatively small gradient
+and only learning on the poses which result in a large gradient.
 
 At every update step, the pose with the largest total difference of the predicted
 $x_{COM}$ value ($\Phi_i \beta$) is used. This ensures that only poses with a
@@ -97,7 +100,8 @@ of less than the $x_{COM}$ tolerance level decided (such as 2 mm).
         \WHILE {$j < n_{poses}$}
         \STATE $q_j $ = Randomly generated pose
         \STATE $\bar{q}_i =$ balanced pose of $q_j$
-        \IF {$\bar{q}_i$'s $ x_{com} <= x_{tol} $ and $\bar{q}_i$ is safe}
+        \STATE //TODO Need to write the algorithm for balancing
+        \IF {$\bar{q}_i$ is safe}
         \STATE Add $\bar{q}_i $ to $\bar{q}$
         \ENDIF
         \STATE $ j = j + 1 $
@@ -135,13 +139,9 @@ of less than the $x_{COM}$ tolerance level decided (such as 2 mm).
     \end{algorithmic}
 \end{algorithm}
 
-\section{Experiment}
+\section{RRTs}
 
-//TODO
-
-\section{Results}
-
-//TODO
-Add some good plots
+To move from one pose to another pose, a safe method of trajectory planning is
+required. We use RRTs (Rapidly Randomly Generated Trees) to accomplish this.
 
 \end{document}
