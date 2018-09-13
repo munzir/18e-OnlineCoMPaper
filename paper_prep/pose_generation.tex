@@ -139,6 +139,36 @@ of less than the $x_{COM}$ tolerance level decided (such as 2 mm).
     \end{algorithmic}
 \end{algorithm}
 
+TODO Munzir wants it small
+input statements should just be one line
+
+\begin{algorithm}
+    \caption{Pose Filtering}
+    \begin{algorithmic}[1]
+        \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+        \renewcommand{\algorithmicensure}{\textbf{Output:}}
+        \REQUIRE Set of randomly generated safe \& balanced poses: $\bar{q} \in
+        \mathbb{R}^{n_{DOF} \times n_{poses}}$,
+        \newline Set of $\phi(q)$ evaluated at each given pose: $\Phi \in
+        \mathbb{R}^{n_{poses} \times dim(\beta)}$,
+        \newline Set of randomly generated erroneous $\beta$s: $\bar{\beta} \in \mathbb{R}^{dim(\beta)
+        \times n_{\beta}}$
+        \ENSURE Filtered set of poses: $\widetilde{q}$
+        \REPEAT
+        \STATE $i^* \leftarrow \underset{i \in \{1, ..., n_{poses}\}}{\mathrm{argmax}}
+        \sum_{k}^{n_{\beta}} | \Phi_i \beta_k |$
+        \STATE $\widetilde{q} \leftarrow [\begin{matrix} \widetilde{q} &
+        \bar{q}_{i^*} \end{matrix}] $
+        \STATE $\phi^* \leftarrow \Phi_{i^{*}}$
+        \STATE $\beta_k \leftarrow \beta_k - (\eta \; \phi^* \beta_k) \phi^* \quad \forall \quad k \in \{1, ..., n_\beta \}$
+        \STATE $\Phi \leftarrow  \Phi \setminus \Phi_{i^*} $
+        \STATE $\bar{q} \leftarrow \bar{q} \setminus \bar{q}_{i^*} $
+        \UNTIL {$ | \phi^* \beta_k | < x_{tol} \quad \forall \quad k \in \{1,
+        ..., n_\beta \} $ for last few iterations}
+        \RETURN $\widetilde{q}$
+    \end{algorithmic}
+\end{algorithm}
+
 \section{RRTs}
 
 To move from one pose to another pose, a safe method of trajectory planning is
