@@ -15,7 +15,7 @@ A repo that contains the files for the Online Center of Mass Estimation Paper
     bibtex onlinecom
     latex onlinecom
     latex onlinecom
-    dvips -Ppdf -G0 -tletter sample
+    dvips -Ppdf -G0 -tletter onlinecom
     ps2pdf -dCompatibilityLevel=1.4 -dMAxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sPAPERSIZE=letter onlinecom.ps onlinecom.pdf
 
 Note: Make sure to compile with `latex` once, `bibtex` once, and then `latex` twice before compiling into a postscript file and then pdf file.
