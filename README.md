@@ -30,6 +30,11 @@ Note: The Overleaf will most likely have the up to date version of the document.
 Please edit there and push to this repo based on the Overleaf. Do not push new
 changes to the document here.
 
+## arXiv
+
+Our released version of this work is available on
+arXiv [here](https://arxiv.org/abs/1810.03076).
+
 ## IEEE PDF Compliance
 
 - [IEEE LaTeX Support Page](http://ras.papercept.net/conferences/support/tex.php)
