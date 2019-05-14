@@ -1,1067 +1,318 @@
-
-%% IEEEexample.bib
-%% V1.10
-%% 2002/09/27
-%% Copyright (c) 2002 by Michael Shell
-%% mshell(at)ece.gatech.edu
-%% See support website below for current contact information.
-%%
-%% NOTE: This text file uses MS Windows line feed conventions. When (human)
-%% reading this file on other platforms, you may have to use a text
-%% editor that can handle lines terminated by the MS Windows line feed
-%% characters (0x0D 0x0A).
-%%
-%% This is an example BibTeX database for the official IEEEtran.bst
-%% BibTeX style file.
-%%
-%% Some entries call strings that are defined in the IEEEabrv.bib file.
-%% Therefore, IEEEabrv.bib should be loaded prior to this file.
-%% Usage:
-%%
-%% \bibliographystyle{./IEEEtran} % use IEEEtran.bst style
-%% \bibliography{./IEEEabrv,./IEEEexample}
-%%
-%%
-%% Support sites:
-%% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
-%% and/or
-%% http://www.ieee.org
-%%**********************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE!
-%% User assumes all risk.
-%% In no event shall IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% This code is distributed under the Perl Artistic License
-%% ( http://language.perl.com/misc/Artistic.html )
-%% and may be freely used, distributed and modified - subject to the
-%% constraints therein.
-%% Retain all contribution notices, credits and disclaimers.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%**********************************************************************
-
-
-% Note that, because the example references were taken from actual IEEE
-% publications, these examples do not always contain the full amount
-% of information that may be desirable (for use with other BibTeX styles).
-% In particular, full names (not abbreviated with initials) should be
-% entered whenever possible as some (non-IEEE) bibliography styles use
-% full names. IEEEtran.bst will automatically abbreviate when it
-% encounters full names.
-
-
-
-
-% references for the IEEEtran.bst documentation
-% the distribution site for IEEEtran.bst
-@electronic{c1,
-  author        = "Michael Shell",
-  title         = "{IEEE}tran Homepage on {CTAN}",
-  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/",
-  year          = "2002"
-};
-
-% the IEEE website
-% sort key is needed for sorting styles
-@electronic{IEEEexample:IEEEwebsite,
-  title         = "The {IEEE} Website",
-  url           = "http://www.ieee.org/",
-  year          = "2002",
-  key           = "IEEE"
-};
-
-% The BibTeX user's guide.
-% The filename could have been put in the URL instead. But, there might
-% be other interesting things for the user in the same directory - and
-% the filename might change before the directory that contains it.
-@electronic{IEEEexample:bibtexuser,
-  author        = "Oren Patashnik",
-  title         = "{\BibTeX}ing",
-  howpublished  = "{btxdoc.pdf}",
-  url           = "http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/",
-  month         = feb,
-  year          = "1988"
-};
-
-% The BibTeX style designer's guide.
-@electronic{IEEEexample:bibtexdesign,
-  author        = "Oren Patashnik",
-  title         = "Designing {\BibTeX\ } Styles",
-  howpublished  = "{btxhak.pdf}",
-  url           = "http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/",
-  month         = feb,
-  year          = "1988"
-};
-
-% The BibTeX Tips and FAQ guide.
-@electronic{IEEEexample:bibtexFAQ,
-  author        = "David Hoadley and Michael Shell",
-  title         = "{\BibTeX}\ Tips and {FAQ}",
-  howpublished  = "{btxFAQ.txt}",
-  url           = "http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/",
-  month         = oct,
-  year          = "2002"
-};
-
-% TeX User Group Bibliography Archive
-@electronic{IEEEexample:beebe_archive,
-  author        = "Nelson H. F. Beebe",
-  title         = "{\TeX\ }User Group Bibliography Archive",
-  url           = "http://www.math.utah.edu:8080/pub/tex/bib/index-table.html",
-  month         = may,
-  year          = "2002"
-};
-
-% The url.sty package.
-@electronic{IEEEexample:urlsty,
-  author        = "Donald Arseneau",
-  title         = "The url.sty package",
-  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/other/misc/",
-  month         = mar,
-  year          = "1999",
-};
-
-
-% The hyperref.sty package.
-@electronic{IEEEexample:hyperrefsty,
-  author        = "Sebastian Rahtz and Heiko Oberdiek",
-  title         = "The hyperref.sty package",
-  url           = "http://www.ctan.org/tex-archive/macros/latex/contrib/supported/hyperref/",
-  month         = jul,
-  year          = "2002",
-};
-
-% The Babel package.
-@electronic{IEEEexample:babel,
-  author        = "Johannes Braams",
-  title         = "The {Babel} package",
-  url           = "http://www.ctan.org/tex-archive/macros/latex/required/babel/",
-  month         = feb,
-  year          = "2001",
-};
-
-
-
-
-
-% The three most common and typical types of references used in
-% IEEE publications:
-
-% an article in a journal
-% Note the use of the IEEE_J_EDL string, defined in the IEEEabrv.bib file,
-% for the journal name. IEEEtran.bst defines the BibTeX standard three
-% letter month codes per IEEE style.
-% From the June 2002 issue of "IEEE Transactions on Electron Devices",
-% page 996, reference #16.
-@article{IEEEexample:article_typical,
-  author        = "S. Zhang and C. Zhu and J. K. O. Sin and P. K. T. Mok",
-  title         = "A Novel Ultrathin Elevated Channel Low-temperature
-                   Poly-{Si} {TFT}",
-  journal       = IEEE_J_EDL,
-  volume        = "20",
-  month         = nov,
-  year          = "1999",
-  pages         = "569-571"
-};
-
-% journal article using et al.
-% The (five) authors are actually: F. Delorme, S. Slempkes, G. Alibert,
-% B. Rose, J. Brandon
-% The month (July) was not given here.
-% From the September 1998 issue of "IEEE Journal on Selected Areas in
-% Communications", page 1257, reference #28.
-@article{IEEEexample:articleetal,
-  author        = "F. Delorme and others",
-  title         = "Butt-jointed {DBR} Laser With 15 {nm} Tunability Grown
-                   in Three {MOVPE} Steps",
-  journal       = "Electron. Lett.",
-  volume        = "31",
-  number        = "15",
-  year          = "1995",
-  pages         = "1244-1245"
-};
-
-
-% a paper in a conference proceedings
-% "conference" can be used as an alias for "inproceedings"
-% From the June 2002 issue of "Journal of Microelectromechanical Systems",
-% page 205, reference #16.
-@inproceedings{IEEEexample:conf_typical,
-  author        = "R. K. Gupta and S. D. Senturia",
-  title         = "Pull-in Time Dynamics as a Measure of Absolute Pressure",
-  booktitle     = "Proc. {IEEE} International Workshop on
-                   Microelectromechanical Systems ({MEMS}'97)",
-  address       = "Nagoya, Japan",
-  month         = jan,
-  year          = "1997",
-  pages         = "290-294"
-};
-
-
-% a book
-% From the May 2002 issue of "IEEE Transactions on Magnetics",
-% page 1466, reference #4.
-@book{IEEEexample:book_typical,
-  author        = "B. D. Cullity",
-  title         = "Introduction to Magnetic Materials",
-  publisher     = "Addison-Wesley",
-  address       = "Reading, MA",
-  year          = "1972"
-};
-
-
-
-
-% Other examples
-
-% journal article with large page numbers, IEEE will divide numbers 5 digits
-% or longer into groups of three with small spaces between them. Page ranges
-% can be separated via either "-" or "--", IEEEtran.bst will automatically
-% convert the separator dash(es) to "--".
-% Authors and/or IEEE do not always provide/use the journal number, but it
-% was used in this case. IEEEtran.bst can be configured to ignore journal
-% numbers if desired.
-% From the August 2000 issue of "IEEE Photonics Technology Letters",
-% page 1039, reference #11.
-@article{IEEEexample:articlelargepages,
-  author        = "A. Castaldini and A. Cavallini and B. Fraboni
-                   and P. Fernandez and J. Piqueras",
-  title         = "Midgap Traps Related to Compensation Processes in
-                   {CdTe} Alloys",
-  journal       = "Phys. Rev. B.",
-  volume        = "56",
-  number        = "23",
-  year          = "1997",
-  pages         = "14897-14900"
-};
-
-
-% journal article with dual months
-% use the BibTeX "#" concatenation operator
-% From the March 2002 issue of "IEEE Transactions on Mechatronics",
-% page 21, reference #8.
-@article{IEEEexample:articledualmonths,
-  author        = "Y. Okada and K. Dejima and T. Ohishi",
-  title         = "Analysis and Comparison of {PM} Synchronous Motor and
-                   Induction Motor Type Magnetic Bearings",
-  journal       = IEEE_J_IA,
-  volume        = "31",
-  month         = sep # "/" # oct,
-  year          = "1995",
-  pages         = "1047-1053"
-};
-
-
-% journal article to be published as a misc entry type
-% date information like month and year is optional
-% However, the article form like that below may be a better approach.
-% From the May 2002 issue of "IEEE Journal of Selected Areas in
-% Communication", page 725, reference #3.
-@misc{IEEEexample:TBPmisc,
-  author        = "M. Coates and A. Hero and R. Nowak and B. Yu",
-  title         = "Internet Tomography",
-  howpublished  = IEEE_M_SP,
-  month         = may,
-  year          = "2002",
-  note          = "to be published"
-};
-
-
-% journal article to be published as an article entry type
-% year is required, so if absent, use the year field to hold
-% the "submitted for publication" in order to avoid a warning for
-% the missing year field.
-% From the June 2002 issue of "IEEE Transactions on Information Theory",
-% page 1461, reference #21.
-@article{IEEEexample:TBParticle,
-  author        = "N. Kahale and R. Urbanke",
-  title         = "On the Minimum Distance of Parallel and Serially
-                   Concatenated Codes",
-  journal       = IEEE_J_IT,
-  year          = "submitted for publication"
-};
-
-
-
-
-
-% book with editor and no author
-% From the June 2002 issue of "IEEE Transactions on Information Theory",
-% page 1725, reference #1.
-@book{IEEEexample:bookwitheditor,
-  editor        = "J. C. Candy and G. C. Temes",
-  title         = "Oversampling Delta-Sigma Data Converters Theory,
-                   Design and Simulation",
-  publisher     = "{IEEE} Press.",
-  address       = "New York",
-  year          = "1992"
-};
-
-
-% book with edition, author and editor
-% Note that the standard BibTeX styles do not support book entries with both
-% author and editor fields, but IEEEtran.bst does.
-% The standard BibTeX way of specifying the edition is to use capitalized
-% ordinal words such as "First", "Second", etc. Most .bst files can convert
-% up to about "Fifth" into the format needed. IEEEtran.bst can convert up
-% to "Tenth" to the "Arabic ordinal" form IEEE uses (e.g., "10th"). For
-% editions over the tenth, it is best to use the "Arabic ordinal" form for
-% IEEE related work (e.g., "101st")
-% Note how "Jr." has to be entered.
-% From the May 2002 issue of "Journal of Lightwave Technology", page 856,
-% reference #17.
-@book{IEEEexample:book,
-  author        = "S. M. Metev and V. P. Veiko",
-  editor        = "Osgood, Jr., R. M.",
-  title         = "Laser Assisted Microtechnology",
-  edition       = "Second",
-  publisher     = "Springer-Verlag",
-  address       = "Berlin, Germany",
-  year          = "1998"
-};
-
-
-% book with series and volume
-% From the January 2000 issue of "IEEE Transactions on Communications",
-% page 11, reference #31.
-@book{IEEEexample:bookwithseriesvolume,
-  editor        = "J. Breckling",
-  title         = "The Analysis of Directional Time Series: Applications to
-                   Wind Speed and Direction",
-  series        = "Lecture Notes in Statistics",
-  publisher     = "Springer",
-  address       = "Berlin, Germany",
-  year          = "1989",
-  volume        = "61"
-};
-
-
-% inbook with chapter number. The pages field could also have been given.
-% The chapter number could be changed to something else such as a section
-% number via the type field: type = "sec.".
-% From the May 2002 issue of "IEEE Transactions on Circuits and Systems---I:
-% Fundamental Applications and Theory", page 638, reference #22.
-@inbook{IEEEexample:inbook,
-  author        = "H. E. Rose",
-  title         = "A Course in Number Theory",
-  publisher     = "Oxford Univ. Press",
-  address       = "New York, NY",
-  year          = "1988",
-  chapter       = "3"
-};
-
-
-% inbook with pages and note. The language field is not set to Russian
-% because the title is presented here in its translated, English, form.
-% From the May 2002 issue of "IEEE Transactions on Magnetics", page 1533,
-% reference #5.
-@inbook{IEEEexample:inbookpagesnote,
-  author        = "B. K. Bul",
-  title         = "Theory Principles and Design of Magnetic Circuits",
-  publisher     = "Energia Press",
-  address       = "Moscow",
-  year          = "1964",
-  pages         = "464",
-  note          = "(in Russian)"
-};
-
-
-
-
-
-% incollection with author and editor
-% From the May 2002 issue of "Journal of Lightwave Technology",
-% page 807, reference #7.
-@incollection{IEEEexample:incollection,
-  author        = "W. V. Sorin",
-  editor        = "D. Derickson",
-  title         = "Optical Reflectometry for Component Characterization",
-  booktitle     = "Fiber Optic Test and Measurement",
-  publisher     = "Prentice-Hall",
-  address       = "Englewood Cliffs, NJ",
-  year          = "1998"
-};
-
-
-% incollection with series
-% From the April 2000 issue of "IEEE Transactions on Communication",
-% page 609, reference #3.
-@incollection{IEEEexample:incollectionwithseries,
-  author        = "J. B. Anderson and K. Tepe",
-  title         = "Properties of the Tailbiting {BCJR} Decoder",
-  booktitle     = "Codes, Systems and Graphical Models",
-  series        = "{IMA} Volumes in Mathematics and Its Applications",
-  publisher     = "Springer-Verlag",
-  address       = "New York",
-  year          = "2000"
-
-};
-
-
-% incollection with author, editor, chapter and pages
-% From the January 2000 issue of "IEEE Transactions on Communications",
-% page 16, reference #9.
-@incollection{IEEEexample:incollection_chpp,
-  author        = "P. Hedelin and P. Knagenhjelm and M. Skoglund",
-  editor        = "W. B. Kleijn and K. K. Paliwal",
-  title         = "Theory for Transmission of Vector Quantization Data",
-  booktitle     = "Speech Coding and Synthesis",
-  publisher     = "Elsevier Science",
-  address       = "Amsterdam, The Netherlands",
-  year          = "1995",
-  chapter       = "10",
-  pages         = "347-396"
-};
-
-
-% incollection with a large number of authors, some authors/journals will
-% use et al. for so many names. IEEEtran.bst can be configured to do this
-% if desired, or "R. M. A. Dawson and others" can be used instead.
-% Note that IEEE may not include the publisher for incollection entries -
-% IEEEtran.bst will not issue a warning if the publisher is missing for
-% incollections - but other .bst files often will.
-% From the June 2002 issue of "IEEE Transactions on Electron Devices",
-% page 996, reference #12.
-@incollection{IEEEexample:incollectionmanyauthors,
-  author        = "R. M. A. Dawson and Z. Shen and D. A. Furst and
-                   S. Connor and J. Hsu and M. G. Kane and R. G. Stewart and
-                   A. Ipri and C. N. King and P. J. Green and R. T. Flegal
-                   and S. Pearson and W. A. Barrow and E. Dickey and K. Ping
-                   and C. W. Tang and S. Van. Slyke and
-                   F. Chen and J. Shi and J. C. Sturm and M. H. Lu",
-  title         = "Design of an Improved Pixel for a Polysilicon
-                   Active-Matrix Organic {LED} Display",
-  booktitle     = "{SID} Tech. Dig.",
-  volume        = "29",
-  year          = "1998",
-  pages         = "11-14"
-};
-
-
-
-
-
-% A Motorola data book as a manual
-% It is somewhat unusual to include the data book part number.
-% in the title. It might be more correct to put this information
-% in the howpublished field instead.
-% From the December 2000 issue of "IEEE Transactions on Communications",
-% page 1986, reference #10.
-@manual{IEEEexample:motmanual,
-  title         = "{FLEXChip} Signal Processor ({MC68175/D})",
-  organization  = "Motorola",
-  year          = "1996"
-};
-
-% same reference, but using IEEEtran's howpublished extension
-@manual{IEEEexample:motmanualhowpub,
-  title         = "{FLEXChip} Signal Processor",
-  howpublished  = "{MC68175/D}",
-  organization  = "Motorola",
-  year          = "1996"
-};
-
-
-
-
-% conference paper with an address and days. Some journals capitalize the
-% letters in "Globecom", this one did not.
-% From the May 2002 issue of "IEEE Transactions on Communications",
-% page 697, reference #12.
-@inproceedings{IEEEexample:confwithadddays,
-  author        = "M. S. Yee and L. Hanzo",
-  title         = "Radial Basis Function Decision Feedback Equaliser
-                   Assisted Burst-by-burst Adaptive Modulation",
-  booktitle     = "Proc. {IEEE} Globecom '99",
-  address       = "Rio de Janeiro, Brazil",
-  month         = dec # " 5--9,",
-  year          = "1999",
-  pages         = "2183-2187"
-};
-
-
-% conference paper with volume number. A conference proceedings with a vol
-% number is a little uncommon, note that the vol number is placed
-% before the address in the formatted bibliography entry
-% From the April 2002 issue of "IEEE/ACM Transactions on Networking",
-% page 181, reference #26.
-@inproceedings{IEEEexample:confwithvolume,
-  author        = "M. Yajnik and S. B. Moon and J. Kurose and D. Towsley",
-  title         = "Measurement and Modeling of the Temporal Dependence in
-                   Packet Loss",
-  booktitle     = "Proc. {IEEE} {INFOCOM}'99",
-  volume        = "1",
-  address       = "New York, NY",
-  month         = mar,
-  year          = "1999",
-  pages         = "345-352"
-};
-
-
-% conference paper with a paper number, the type field can be used to
-% override the word "paper", e.g., type = "postdeadline paper". A type
-% can be given even without a paper  field.
-% Also, IEEEtran.bst can be configured to ignore paper numbers and types.
-% From the May 2002 issue of "Journal of Lightwave Technology",
-% page 807, reference #4.
-@inproceedings{IEEEexample:confwithpaper,
-  author        = "M. Wegmuller and J. P. von der Weid and P. Oberson
-                   and N. Gisin",
-  title         = "High Resolution Fiber Distributed Measurements With
-                   Coherent {OFDR}",
-  booktitle     = "Proc. {ECOC}'00",
-  year          = "2000",
-  paper         = "11.3.4",
-  pages         = "109"
-};
-
-
-% conference paper with a postdeadline type paper, the paper field is
-% optional.
-% From the August 2000 issue of "IEEE Photonics Technology Letters",
-% page 1087, reference #12.
-@inproceedings{IEEEexample:confwithpapertype,
-  author        = "B. Mikkelsen and G. Raybon and R.-J. Essiambre and
-                   K. Dreyer and Y. Su. and L. E. Nelson and J. E. Johnson
-                   and G. Shtengel and A. Bond and D. G. Moodie and
-                   A. D. Ellis",
-  title         = "160 {Gbit/s} Single-channel Transmission Over 300 km
-                   Nonzero-dispersion Fiber With Semiconductor Based
-                   Transmitter and Demultiplexer",
-  booktitle     = "Proc. {ECOC}'99",
-  year          = "1999",
-  paper         = "2-3",
-  type          = "postdeadline paper",
-  pages         = "28-29"
-};
-
-
-% presented at a conference
-% intype overrides the default "in" and causes the booktitle not to be
-% emphasized (rendered in italics).
-% From the February 2002 issue of "IEEE/ACM Transactions on Networking",
-% page 163, reference #6.
-@inproceedings{IEEEexample:presentedatconf,
-  author        = "S. G. Finn and M. M{\'e}dard and R. A. Barry",
-  title         = "A Novel Approach to Automatic Protection Switching
-                   Using Trees",
-  intype        = "presented at the",
-  booktitle     = "Proc. Int. Conf. Commun.",
-  year          = "1997"
-};
-
-
-
-
-
-% master's thesis, often the University name will be abbreviated and the
-% state or country will be included in the address. The type field can
-% used to override the default type "Master's thesis"
-% From the June 2002 issue of "IEEE Transactions on Microelectromechanical
-% Systems", page 186, reference #11.
-@mastersthesis{IEEEexample:masters,
-  author        = "Nin C. Loh",
-  title         = "High-Resolution Micromachined Interferometric
-                   Accelerometer",
-  school        = "Massachusetts Institute of Technology",
-  address       = "Cambridge",
-  year          = "1992"
-};
-
-
-% master's thesis with a type field
-% From the August 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 391, reference #12.
-@mastersthesis{IEEEexample:masterstype,
-  author        = "A. Karnik",
-  title         = "Performance of {TCP} Congestion Control with Rate
-                   Feedback: {TCP/ABR} and Rate Adaptive {TCP/IP}",
-  school        = "Indian Institute of Science",
-  type          = "M. Eng. thesis",
-  address       = "Bangalore, India",
-  month         = jan,
-  year          = "1999"
-};
-
-
-
-
-
-% Ph.D. dissertation with a URL field, the university is abbreviated
-% From the October 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 590, reference #11.
-@phdthesis{IEEEexample:phdurl,
-  author        = "Q. Li",
-  title         = "Delay Characterization and Performance Control of
-                   Wide-area Networks",
-  school        = "Univ. of Delaware",
-  address       = "Newark",
-  month         = may,
-  year          = "2000",
-  url           = "http://www.ece.udel.edu/~qli"
-};
-
-
-
-
-
-% technical report
-% From the August 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 490, reference #15.
-@techreport{IEEEexample:techrep,
-  author        = "R. Jain and K. K. Ramakrishnan and D. M. Chiu",
-  title         = "Congestion Avoidance in Computer Networks with a
-                   Connectionless Network Layer",
-  institution   = "Digital Equipment Corporation",
-  address       = "MA",
-  number        = "DEC-TR-506",
-  month         = aug,
-  year          = "1987"
-};
-
-
-% technical report with type
-% for those times when "Tech. Rep." needs to be modified
-% From the February 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 46, reference #8.
-@techreport{IEEEexample:techreptype,
-  author        = "J. Padhye and V. Firoiu and D. Towsley",
-  title         = "A Stochastic Model of {TCP} {R}eno Congestion Avoidance
-                   and Control",
-  institution   = "Univ. of Massachusetts",
-  address       = "Amherst, MA",
-  type          = "CMPSCI Tech. Rep.",
-  number        = "99-02",
-  year          = "1999"
-};
-
-
-% technical report with type
-% for those times when "Tech. Rep." needs to be modified
-% This reference did not have an address.
-% From the January 2000 issue of "IEEE Transactions on Communications",
-% page 117, reference #6.
-@techreport{IEEEexample:techreptypeii,
-  author        = "D. Middleton and A. D. Spaulding",
-  title         = "A Tutorial Review of Elements of Weak Signal Detection
-                   in Non-{G}aussian {EMI} Environments",
-  institution   = "National Telecommunications and Information
-                   Administration ({NTIA}), U.S. Dept. of Commerce",
-  type          = "NTIA Report",
-  number        = "86-194",
-  month         = may,
-  year          = "1986"
-};
-
-
-
-
-
-% an unpublished work
-% for unpublished types, the note field is required. IEEE usually
-% just uses the word "unpublished" for the note.
-% From the August 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 391, reference #16.
-@unpublished{IEEEexample:unpublished,
-  author        = "T. J. Ott and N. Aggarwal",
-  title         = "{TCP} over {ATM}: {ABR} or {UBR}",
-  note          = "Unpublished"
-};
-
-
-
-
-
-% electronic with a howpublished information field
-% From the August 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 391, reference #7.
-@electronic{IEEEexample:electronhowinfo,
-  author        = "V. Jacobson",
-  title         = "Modified {TCP} Congestion Avoidance Algorithm",
-  howpublished  = "end2end-interest mailing list",
-  url           = "ftp://ftp.isi.edu/end2end/end2end-interest-1990.mail",
-  month         = apr,
-  year          = "1990"
-};
-
-
-% electronic with a howpublished information field
-% From the August 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 418, reference #31.
-@electronic{IEEEexample:electronhowinfo2,
-  author        = "V. Valloppillil and K. W. Ross",
-  title         = "Cache Array Routing Protocol v1.1",
-  howpublished  = "Internet draft",
-  url           = "http://ds1.internic.net/internet-drafts/draft-vinod-carp-v1-03.txt",
-  year          = "1998"
-};
-
-
-% electronic with an organization and address
-% From the February 2002 issue of "IEEE/ACM Transactions on Networking",
-% page 114, reference #15.
-@electronic{IEEEexample:electronorgadd,
-  author        = "D. H. Lorenz and A. Orda",
-  title         = "Optimal Partition of {QoS} Requirements on Unicast
-                   Paths and Multicast Trees",
-  organization  = "Dept. Elect. Eng., Technion",
-  address       = "Haifa, Israel",
-  url           = "ftp://ftp.technion.ac.il/pub/supported/ee/Network/lor.mopq98.ps",
-  month         = jul,
-  year          = "1998"
-};
-
-
-
-
-
-% U.S. patent
-% Use the type field to override the patent type. e.g.,
-% type = "Patent Application"
-% The address is that of the assignee. Note that IEEE does not
-% display the assignee, the address, and only displays one date.
-% (if year is not present, the filed dates are used.) However, this
-% information should be entered as other BibTeX styles may use it.
-% alternatively, nationality could be entered as "U.S."
-% From the April 2000 issue of "IEEE Transactions on Communications",
-% page 542, reference #6.
-@patent{IEEEexample:uspat,
-  author        = "Ronald E. Sorace and Victor S. Reinhardt and
-                   Steven A. Vaughn",
-  assignee      = "Hughes Aircraft Company",
-  address       = "Los Angeles, CA",
-  title         = "High-Speed Digital-to-{RF} Converter",
-  nationality   = "United States",
-  number        = "5668842",
-  dayfiled      = "28",
-  monthfiled    = feb,
-  yearfiled     = "1995",
-  day           = "16",
-  month         = sep,
-  year          = "1997"
-};
-
-
-% Japanese Patent
-% From the April 2000 issue of "IEEE Transactions on Communications",
-% page 556, reference #6.
-@patent{IEEEexample:jppat,
-  author        = "U. Hideki",
-  title         = "Quadrature Modulation Circuit",
-  nationality   = "Japanese",
-  number        = "152932/92",
-  day           = "20",
-  month         = may,
-  year          = "1992"
-};
-
-
-% French Patent request, the language field must be entered in lower case
-% as this is the option name Babel uses. The nationality field needs to be
-% capitalized. Because this is a patent request, the date filed fields are
-% used while the date fields are left empty/missing. In other countries,
-% the words "Patent Application", etc. are used instead.
-% From the April 2000 issue of "IEEE Transactions on Communications",
-% page 556, reference #9.
-@patent{IEEEexample:frenchpatreq,
-  author        = "F. Kowalik and M. Isard",
-  title         = "Estimateur d'un D{\'e}faut de Fonctionnement
-                   d'un Modulateur en Quadrature et {\'E}tage de Modulation
-                   l'Utilisant",
-  language      = "french",
-  nationality   = "French",
-  type          = "Patent Request",
-  number        = "9500261",
-  dayfiled      = "11",
-  monthfiled    = jan,
-  yearfiled     = "1995"
-};
-
-
-
-
-
-% a periodical
-% From the April 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 160, reference #1.
-% sort key is needed for sorting styles
-@periodical{IEEEexample:periodical,
-  title         = IEEE_M_PCOM # ", Special Issue on Wireless {ATM}",
-  volume        = "3",
-  month         = aug,
-  year          = "1996",
-  key           = "IEEE"
-};
-
-
-
-
-
-% standard, IEEE does not use the address for standards, but it is good
-% to provide one for BibTeX styles that use it.
-% From the August 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 451, reference #2.
-@standard{IEEEexample:standard,
-  title         = "Wireless {LAN} Medium Access Control {(MAC)} and
-                   Physical Layer {(PHY)} Specification",
-  organization  = "IEEE",
-  address       = "Piscataway, NJ",
-  number        = "802.11",
-  year          = "1997"
-};
-
-
-% standard with type and revision, the type overrides the word standard
-% (or std.). Here a standard number is not available and a revision number
-% is used.
-% From the August 2000 issue of "IEEE Photonics Technology Letters",
-% page 1048, reference #13.
-@standard{IEEEexample:standardproposed,
-  title         = "Fiber Channel Physical Interface ({FC-PI})",
-  institution   = "NCITS",
-  address       = "Washington, DC",
-  type          = "Working Draft Proposed Standard",
-  revision      = "5.2",
-  year          = "1999"
-};
-
-
-% standard draft as a misc with author
-% From the May 2002 issue of "IEEE Journal of Selected Areas in
-% Communication", page 725, reference #16.
-@misc{IEEEexample:draftasmisc,
-  author        = "I. Widjaja and A. Elwalid",
-  title         = "{MATE}: {MPLS} Adaptive Traffic Engineering",
-  howpublished  = "IETF Draft",
-  year          = "1999"
-};
-
-
-
-
-
-% misc for a techreport like reference
-% techreport is not perfectly suitable because this entry lacks
-% an institution field
-% From the August 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 490, reference #22.
-@misc{IEEEexample:miscforum,
-  author        = "L. Roberts",
-  title         = "Enhanced Proportional Rate Control Algorithm {PRCA}",
-  howpublished  = "{ATM} Forum Contribution 94-0735R1",
-  month         = aug,
-  year          = "1994"
-};
-
-
-% misc for a white paper
-% From the August 2001 issue of "IEEE/ACM Transactions on Networking",
-% page 478, reference #4 - Note that the reference there (improperly?)
-% used the author field for "Cisco".
-@misc{IEEEexample:whitepaper,
-  title         = "Advanced {QoS} Services for the Intelligent Internet",
-  howpublished  = "White Paper",
-  organization  = "Cisco",
-  month         = may,
-  year          = "1997"
-};
-
-
-% misc for a data sheet
-% From the November 2000 issue of "IEEE Photonics Technology Letters",
-% page 1551, reference #6.
-@misc{IEEEexample:datasheet,
-  title         = "{PDCA12-70} data sheet",
-  organization  = "Opto Speed SA",
-  address       = "Mezzovico, Switzerland"
-};
-
-
-
-
-
-% Other unusual references
-
-% a private communication as a misc entry type
-% sometimes the designation "personal communication" is used instead
-% From the June 2002 issue of "IEEE Transactions on Information Theory",
-% page 1725, reference #16.
-@misc{IEEEexample:private,
-  author        = "S. Konyagin",
-  howpublished  = "private communication",
-  year          = "1998"
-};
-
-
-% an internet request for comments (RFC) as a misc entry type
-% It would also be nice to add a URL to these types of things.
-% RFCs can also be handled as electronic references.
-% From the April 2002 issue of "IEEE/ACM Transactions on Networking",
-% page 181, reference #14.
-@misc{IEEEexample:miscrfc,
-  author        = "K. K. Ramakrishnan and S. Floyd",
-  title         = "A Proposal to Add Explicit Congestion
-                   Notification ({ECN}) to {IP}",
-  howpublished  = "RFC 2481",
-  month         = jan,
-  year          = "1999"
-};
-
-
-% misc for a German regulation
-% In German, the first letters of nouns are capitalized, so we do so here.
-% From the June 2002 issue of "IEEE Journal in Selected Areas in
-% Communication", page 892, reference #9.
-@misc{IEEEexample:miscgermanreg,
-  title         = "{M}essung von {S}t{\"o}rfeldern an {A}nlagen
-                   und {L}eitungen der {T}elekommunikation im
-                   {F}requenzbereich 9 {kHz} bis 3 {GHz}",
-  language      = "german",
-  howpublished  = "{M}e{\ss}vorschrift {R}eg {TP} {MV} 05",
-  organization  = "Regulierungsbeh{\"o}rde f{\"u}r {T}elekommunikation und
-                   {P}ost ({R}eg {TP})"
-};
-
-
-
-% Ways to handle things like CCSDS's Blue Books
-% journal article with a URL. However, this is not a very good approach
-% because the Blue Books are not really journals and the author field has
-% to be abused.
-% From the June 2002 issue of "IEEE Transactions on Information Theory",
-% page 1461, reference #7.
-@article{IEEEexample:bluebookarticle,
-  author        = "{Consulative Committee for Space Data Systems (CCSDS)}",
-  title         = "Telemetry Channel Coding",
-  journal       = "Blue Book",
-  number        = "4",
-  year          = "1999",
-  url           = "http://www.ccsds.org/documents/pdf/CCSDS-101.0-B-4.pdf"
-};
-
-
-% CCSDS's Blue Book handled as a book
-% However, it is not a good idea to have to use the author field for
-% an organization (done here because the book entry type requires an
-% author field).
-@book{IEEEexample:bluebookbook,
-  author        = "{Consulative Committee for Space Data Systems (CCSDS)}",
-  title         = "Telemetry Channel Coding",
-  series        = "Blue Book",
-  number        = "4",
-  publisher     = "CCSDS",
-  address       = "Newport Beach, CA",
-  year          = "1999",
-  url           = "http://www.ccsds.org/documents/pdf/CCSDS-101.0-B-4.pdf"
-};
-
-% CCSDS's Blue Book handled as a manual
-% This is a much better approach, but uses the howpublished field.
-@manual{IEEEexample:bluebookmanual,
-  title         = "Telemetry Channel Coding",
-  howpublished  = "ser. Blue Book, No. 4",
-  organization  = "Consulative Committee for Space Data Systems (CCSDS)",
-  address       = "Newport Beach, CA",
-  year          = "1999",
-  url           = "http://www.ccsds.org/documents/pdf/CCSDS-101.0-B-4.pdf"
-};
-
-
-
-% CCSDS's Blue Book handled as a standard
-% Probably the best approach for this particular case because the work
-% is standard related. Note that IEEE does not display the address for
-% standards.
-@standard{IEEEexample:bluebookstandard,
-  title         = "Telemetry Channel Coding",
-  howpublished  = "ser. Blue Book, No. 4",
-  organization  = "Consulative Committee for Space Data Systems (CCSDS)",
-  address       = "Newport Beach, CA",
-  type          = "Recommendation for Space Data System Standard",
-  number        = "101.0-B-4",
-  month         = May,
-  year          = "1999",
-  url           = "http://www.ccsds.org/documents/pdf/CCSDS-101.0-B-4.pdf"
-};
-
-
-
-
-
-
-% An example of a IEEEtran control entry which can change some IEEEtran.bst
-% settings. An entry like this must be cited via \bstctlcite{} command
-% before the first real \cite{}. The same entry key cannot be called twice
-% (just like multiple \cite{} of the same entry key place only one entry
-% in the bibliography.)
-% The available control fields are:
-%
-% CTLuse_article_number
-% "no" turns off the display of the number for articles.
-% "yes" enables
-%
-% CTLuse_paper
-% "no" turns off the display of the paper and type fields in inproceedings.
-% "yes" enables
-%
-% CTLuse_forced_etal
-% "no" turns off the forced use of "et al."
-% "yes" enables
-%
-% CTLmax_names_forced_etal
-% The maximum number of names that can be present beyond which an "et al."
-% usage is forced. Be sure that CTLnames_show_etal (below)
-% is not greater than this value!
-%
-% CTLnames_show_etal
-% The number of names that will be shown with a forced "et al.".
-% Must be less than or equal to CTLmax_names_forced_etal
-%
-% CTLuse_alt_spacing
-% "no" turns off the alternate interword spacing for entries with URLs.
-% "yes" enables
-%
-% CTLalt_stretch_factor
-% If alternate interword spacing for entries with URLs is enabled, this is
-% the interword spacing stretch factor that will be used. For example, the
-% default "4" here means that the interword spacing in entries with URLs can
-% stretch to four times normal. Does not have to be an integer.
-%
-% CTLdash_repeated_names
-% "no" turns off the "dashification" of repeated (i.e., identical to those
-% of the previous entry) names. IEEE normally does this.
-% "yes" enables
-%
-% CTLname_format_string
-% The name format control string as explained in the BibTeX style hacking
-% guide.
-% IEEE style "{f.~}{vv~}{ll}{, jj}" is the default,
-%
-% CTL_name_latex_cmd
-% A LaTeX command that each name will be fed to (e.g., "\textsc").
-% Leave empty if no special font is desired for the names.
-% The default is empty.
-%
-% Those fields that are not to be changed can be left out or empty.
-@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
-  CTLuse_article_number     = "yes",
-  CTLuse_paper              = "yes",
-  CTLuse_forced_etal        = "no",
-  CTLmax_names_forced_etal  = "10",
-  CTLnames_show_etal        = "1",
-  CTLuse_alt_spacing        = "yes",
-  CTLalt_stretch_factor     = "4",
-  CTLdash_repeated_names    = "yes",
-  CTLname_format_string     = "{f.~}{vv~}{ll}{, jj}",
-  CTLname_latex_cmd         = ""
-};
-
-
-
+% Encoding: UTF-8
+
+@InProceedings{canete2012disturbance,
+  author    = {L. Canete and T. Takahashi},
+  title     = {Disturbance compensation in pushing, pulling, and lifting for load transporting control of a wheeled inverted pendulum type assistant robot using the Extended State Observer},
+  booktitle = {2012 IEEE/RSJ International Conference on Intelligent Robots and Systems},
+  year      = {2012},
+  pages     = {5373-5380},
+  month     = {Oct},
+  doi       = {10.1109/IROS.2012.6386051},
+  issn      = {2153-0858},
+  keywords  = {error compensation;feedback;loading;mobile robots;motion control;nonlinear control systems;observers;pendulums;position control;stability;I-PENTAR;balance control;disturbance compensation;disturbance estimation;disturbance test;error compensation;extended state observer;feedback;lifting task;load transporting control;pulling task;pushing task;system information;system model parameter;task execution;wheeled inverted pendulum type assistant robot;Force;Joints;Mobile robots;Observers;Torque;Wheels},
+}
+
+@inproceedings{miklosovic2005dynamic,
+  title={A dynamic decoupling method for controlling high performance turbofan engines},
+  author={Miklosovic, Robert and Gao, Zhiqiang},
+  booktitle={Proc. of the 16th IFAC World Congress},
+  volume={16},
+  pages={482--488},
+  year={2005},
+  organization={Czech Republic}
+}
+
+@InProceedings{Kudruss2015,
+  author    = {M. Kudruss and M. Naveau and O. Stasse and N. Mansard and C. Kirches and P. Soueres and K. Mombaur},
+  title     = {Optimal control for whole-body motion generation using center-of-mass dynamics for predefined multi-contact configurations},
+  booktitle = {2015 IEEE-RAS 15th International Conference on Humanoid Robots (Humanoids)},
+  year      = {2015},
+  pages     = {684-689},
+  month     = {Nov},
+  doi       = {10.1109/HUMANOIDS.2015.7363428},
+  keywords  = {humanoid robots;legged locomotion;optimal control;bipedal locomotion;center-of-mass dynamics;dynamic model;fully dynamic multicontact motion;handrail;humanoid robot platform HRP-2 climb stairs;humanoid robotics;humanoid robots;kinematic feasible center-of-mass trajectory;multicontact motion generation;optimal contact forces;optimal control;predefined multicontact configurations;whole-body motion generation;Dynamics;Friction;Humanoid robots;Legged locomotion;Robot kinematics;Trajectory},
+}
+@article{pathak2005velocity,
+abstract = {In this paper, the dynamic model of a wheeled inverted pendulum (e.g., Segway, Quasimoro, and Joe) is analyzed from a controllability and feedback linearizability point of view. First, a dynamic model of this underactuated system is derived with respect to the wheel motor torques as inputs while taking the nonholonomic no-slip constraints into considerations. This model is compared with the previous models derived for similar systems. The strong accessibility condition is checked and the maximum relative degree of the system is found. Based on this result, a partial feedback linearization of the system is obtained and the internal dynamics equations are isolated. The resulting equations are then used to design two novel controllers. The first one is a two-level velocity controller for tracking vehicle orientation and heading speed set-points, while controlling the vehicle pitch (pendulum angle from the vertical) within a specified range. The second controller is also a two-level controller which stabilizes the vehicle's position to the desired point, while again keeping the pitch bounded between specified limits. Simulation results are provided to show the efficacy of the controllers using realistic data.},
+author = {Pathak, Kaustubh and Franch, Jaume and Agrawal, Sunil K.},
+doi = {10.1109/TRO.2004.840905},
+file = {:home/bogdan/Downloads/humanoids papers/01435497.pdf:pdf},
+isbn = {0-7803-8682-5},
+issn = {15523098},
+journal = {IEEE Transactions on Robotics},
+keywords = {Lyapunov methods,Mobile robots,Modeling,Nonlinear systems,Position control,Velocity control},
+
+number = {3},
+pages = {505--513},
+title = {{Velocity and position control of a wheeled inverted pendulum by partial feedback linearization}},
+volume = {21},
+year = {2005}
+}
+@article{takei2009baggage,
+abstract = {Our goal is to configure an automatic baggage-transportation system by an inverted pendulum robot and realize a navigation function in a real environment. The system consists of two cooperative subsystems: a balancing-and-traveling control subsystem and a navigation subsystem. Position errors of the inverted pendulum robot are often caused by a drift error in the gyro sensor and a change in the center of gravity by a loaded baggage when applying the linear state feedback control method for balancing and traveling. We have reduced the position errors for navigation by resetting the balance position occasionally while traveling with simple methods without an external observer or alternative sensors. In this paper, we state the method and show the experimental results of navigation in a real environment by the implemented robot system.},
+author = {Takei, Toshinobu and Imamura, Ryoko and Yuta, Shin'ichi},
+doi = {10.1109/TIE.2009.2027252},
+file = {:home/bogdan/Downloads/humanoids papers/05170096.pdf:pdf},
+isbn = {0278-0046},
+issn = {02780046},
+journal = {IEEE Transactions on Industrial Electronics},
+keywords = {Baggage transportation,Compensation of posture errors,Navigation,Wheeled inverted pendulum mobile robot},
+
+number = {10},
+pages = {3985--3994},
+title = {{Baggage transportation and navigation by a wheeled inverted pendulum mobile robot}},
+volume = {56},
+year = {2009}
+}
+
+@InProceedings{Zafar2016,
+  author    = {M. Zafar and H. I. Christensen},
+  title     = {Whole body control of a wheeled inverted pendulum humanoid},
+  booktitle = {2016 IEEE-RAS 16th International Conference on Humanoid Robots (Humanoids)},
+  year      = {2016},
+  pages     = {89-94},
+  month     = {Nov},
+  doi       = {10.1109/HUMANOIDS.2016.7803259},
+  keywords  = {actuators;manipulator dynamics;mobile robots;motion control;nonlinear systems;pendulums;redundant manipulators;torque;wheels;actuators;dynamic balancing;inertia matrix;operational space control;redundant manipulator;robot motion;torque driving;two degrees of freedom;wheel dynamics;wheeled inverted pendulum humanoid;whole body control;Aerospace electronics;Manipulator dynamics;Mobile robots;Robot kinematics;Symmetric matrices;Wheels},
+}
+
+@Article{Carpentier2016,
+  author   = {J. Carpentier and M. Benallegue and N. Mansard and J. P. Laumond},
+  title    = {Center-of-Mass Estimation for a Polyarticulated System in Contact: A Spectral Approach},
+  journal  = {IEEE Transactions on Robotics},
+  year     = {2016},
+  volume   = {32},
+  number   = {4},
+  pages    = {810-822},
+  month    = {Aug},
+  issn     = {1552-3098},
+  doi      = {10.1109/TRO.2016.2572680},
+  keywords = {estimation theory;filtering theory;force sensors;humanoid robots;position control;robot dynamics;robot kinematics;sensor fusion;spectral analysis;center-of-mass position estimation;complementary filtering;dynamic model;human body;humanoid robot;interaction force sensor;kinematic reconstruction;polyarticulated system;spectral analysis;Dynamics;Estimation;Humanoid robots;Robot sensing systems;Solid modeling;Human locomotion;humanoid robots;sensor fusion},
+}
+
+@InProceedings{Muscolo2011,
+  author    = {G. G. Muscolo and C. T. Recchiuto and C. Laschi and P. Dario and K. Hashimoto and A. Takanishi},
+  title     = {A method for the calculation of the effective Center of Mass of humanoid robots},
+  booktitle = {2011 11th IEEE-RAS International Conference on Humanoid Robots},
+  year      = {2011},
+  pages     = {371-376},
+  month     = {Oct},
+  doi       = {10.1109/Humanoids.2011.6100864},
+  issn      = {2164-0572},
+  keywords  = {humanoid robots;legged locomotion;biped humanoid robot;center of mass;force sensors;humanoid robots;pattern generator;torque sensors;virtual posture;virtual robot model;Humanoid robots;Joints;Legged locomotion;Robot sensing systems;Solid modeling;Biped walking robot;Center of Mass;Dynamic Balance;Humanoid robot;Posture Control;Zero Moment Point},
+}
+
+@Misc{Bature2014,
+  author = {Amir A. Bature and Salinda Buyamin and Mohamed N. Ahmad and Mustapha Muhammad},
+  title  = {A Comparison of Controllers for Balancing Two Wheeled Inverted Pendulum Robot},
+  year   = {2014},
+}
+
+@InProceedings{Gao2006,
+  author    = {Zhiqiang Gao},
+  title     = {Active disturbance rejection control: a paradigm shift in feedback control system design},
+  booktitle = {2006 American Control Conference},
+  year      = {2006},
+  month     = {June},
+  doi       = {10.1109/ACC.2006.1656579},
+  issn      = {0743-1619},
+  keywords  = {control system synthesis;feedback;motion control;stability;active disturbance rejection control;feedback control system design;motion control metaphor;stability analysis;Control systems;Control theory;Design engineering;Educational institutions;Feedback control;Mathematical model;Motion control;Optimal control;Robust control;Steam engines},
+}
+
+@INPROCEEDINGS{SangJoo2007, 
+author={SangJoo Kwon and Yonghwan Oh}, 
+booktitle={2007 International Conference on Control, Automation and Systems}, 
+title={Estimation of the center of mass of humanoid robot}, 
+year={2007}, 
+volume={}, 
+number={}, 
+pages={2705-2709}, 
+keywords={angular measurement;closed loop systems;estimation theory;humanoid robots;Kalman filters;legged locomotion;mass;observers;open loop systems;uncertain systems;mass center estimation;bipedal humanoid robot;closed-loop observer;conversion method;joint angle measurements;discrete Kalman filter;zero moment point;open-loop;parametric uncertainties;external disturbances;Humanoid robots;Motion measurement;Legged locomotion;Motion estimation;Equations;Position measurement;Stability;Aerospace control;Aerospace engineering;Estimation error;Humanoid;center of mass (CoM);zero moment point (ZMP);discrete Kalman filter}, 
+doi={10.1109/ICCAS.2007.4406826}, 
+ISSN={}, 
+month={Oct},}
+
+
+@INPROCEEDINGS{Sihite2018, 
+author={E. Sihite and T. Bewley}, 
+booktitle={2018 Annual American Control Conference (ACC)}, 
+title={Attitude estimation of a high-yaw-rate Mobile Inverted Pendulum; comparison of Extended Kalman Filtering, Complementary Filtering, and motion capture}, 
+year={2018}, 
+volume={}, 
+number={}, 
+pages={5831-5836}, 
+keywords={Kalman filters;mobile robots;motion control;nonlinear filters;pendulums;state estimation;state estimators;Mobile Inverted Pendulum robots;effective feedback stabilization;MIP estimation techniques;Complementary Kalman Filter;Digital Motion Processor;TDK InvenSense MPU-9250;dynamically modelled Extended Kalman Filter;tilt angle estimates;motion capture;high yaw rate dynamic EKF;planar dynamic EKF;attitude estimation;Extended Kalman filtering;Complementary filtering;high-yaw-rate mobile inverted pendulum;yaw rate setpoints;Kalman filters;Mathematical model;Dynamics;Wheels;Robot kinematics;Vehicle dynamics}, 
+doi={10.23919/ACC.2018.8431624}, 
+ISSN={2378-5861}, 
+month={June},}
+
+@INPROCEEDINGS{Pajon2017, 
+author={A. Pajon and S. Caron and G. De Magistri and S. Miossec and A. Kheddar}, 
+booktitle={2017 IEEE-RAS 17th International Conference on Humanoid Robotics (Humanoids)}, 
+title={Walking on gravel with soft soles using linear inverted pendulum tracking and reaction force distribution}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={432-437}, 
+keywords={closed loop systems;gait analysis;humanoid robots;impact (mechanical);mobile robots;nonlinear control systems;path planning;pendulums;stability;state estimation;soft soles;reaction force distribution;ground unevenness;rough terrains;control loop;humanoid robots;flat terrain;uneven terrain;simple deformation estimator;closed-loop controller;linear inverted pendulum tracking;passive degrees-of-freedom;state estimation;overall robot stabilization;error minimization;center-of-mass;COM;zero moment point;ZMP;admittance control;HRP-4 humanoid;Legged locomotion;Foot;Force;Strain;Eigenvalues and eigenfunctions;Trajectory}, 
+doi={10.1109/HUMANOIDS.2017.8246909}, 
+ISSN={2164-0580}, 
+month={Nov},}
+
+@INPROCEEDINGS{Luo2012, 
+author={D. Luo and Y. Wang and X. Wu}, 
+booktitle={2012 IEEE International Conference on Mechatronics and Automation}, 
+title={Online learning of COM trajectory for humanoid robot locomotion}, 
+year={2012}, 
+volume={}, 
+number={}, 
+pages={1996-2001}, 
+keywords={control engineering computing;humanoid robots;learning (artificial intelligence);legged locomotion;motion control;stability;trajectory control;COM trajectory;humanoid robot locomotion;center of mass;stable robot locomotion;natural robot locomotion;online autonomous learning;locomotion stability;self-consistent measure;humanoid robot PKU-HR4;Trajectory;Robot kinematics;Stability criteria;Humanoid robots;Interpolation;COM trajectory;robot locomotion;consistent measure;stability criterion;online learning}, 
+doi={10.1109/ICMA.2012.6285128}, 
+ISSN={2152-7431}, 
+month={Aug},}
+
+
+@INPROCEEDINGS{Chen2017, 
+author={Q. Chen and H. Cheng and C. Yue and R. Huang and H. Guo}, 
+booktitle={2017 IEEE International Conference on Mechatronics and Automation (ICMA)}, 
+title={Step length adaptation for walking assistance}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={644-650}, 
+keywords={bone;control engineering computing;health care;learning (artificial intelligence);medical robotics;orthopaedics;patient rehabilitation;step length adaptation;walking assistance;lower exoskeleton;patient rehabilitation;health care;predefined gait control;clinical gait analysis;CGA;exoskeleton robot;hybrid human-exoskeleton agent;HHEA;dynamic movement primitives;DMP;gait length;center of mass;CoM;reinforcement learning;Exoskeletons;Legged locomotion;Adaptation models;Trajectory;Learning (artificial intelligence);Dynamics;Mathematical model;Step Length Adaptation;Walking Assistance;Dynamic Movement Primitives;Reinforcement Learning;AIDER}, 
+doi={10.1109/ICMA.2017.8015892}, 
+ISSN={2152-744X}, 
+month={Aug},}
+
+
+@INPROCEEDINGS{Yang2016, 
+author={L. Yang and Z. Liu and Y. Zhang}, 
+booktitle={2016 Chinese Control and Decision Conference (CCDC)}, 
+title={Dynamic balance control of biped robot using optimized SLFNs}, 
+year={2016}, 
+volume={}, 
+number={}, 
+pages={5303-5307}, 
+keywords={energy conservation;feedforward neural nets;learning (artificial intelligence);legged locomotion;neurocontrollers;nonlinear control systems;dynamic balance control;biped robot control;energy efficiency;moment equilibrium conditions;optimized control scheme;control performance;optimized learning mechanism;SLFN;nonlinear relationship;ZMP error;CoM;center of mass position;online algorithm;locomotion stability;single hidden layer feedforward neural networks;Legged locomotion;Learning systems;Trajectory;Stability criteria;Gravity;Humanoid robots;ZMP;Biped Robot;Extreme Learning Machine;CoM;Yaw moment}, 
+doi={10.1109/CCDC.2016.7531946}, 
+ISSN={1948-9447}, 
+month={May},}
+
+
+@INPROCEEDINGS{Kim2016, 
+author={T. Kim and H. J. Kim}, 
+booktitle={2016 16th International Conference on Control, Automation and Systems (ICCAS)}, 
+title={Path tracking control and identification of tire parameters using on-line model-based reinforcement learning}, 
+year={2016}, 
+volume={}, 
+number={}, 
+pages={215-219}, 
+keywords={learning (artificial intelligence);parameter estimation;position control;predictive control;road vehicles;tyres;vehicle dynamics;autonomous vehicle;model predictive control;control input sequence;tracking error minimization;MPC performance;priori prediction model;online model-based reinforcement learning;path error;unknown parameter learning;path tracking simulation;online model-based RL;maneuverability;path tracking control;unknown tire parameter identification;Tires;Mathematical model;Vehicles;Vehicle dynamics;Predictive models;Brushes;Wheels;autonomous vehicle;model-based reinforcement learning;model predictive control}, 
+doi={10.1109/ICCAS.2016.7832324}, 
+ISSN={}, 
+month={Oct},}
+
+
+@INPROCEEDINGS{Jamone2014, 
+author={L. Jamone and B. Damas and J. Santos-Victor}, 
+booktitle={2014 IEEE International Symposium on Intelligent Control (ISIC)}, 
+title={Incremental learning of context-dependent dynamic internal models for robot control}, 
+year={2014}, 
+volume={}, 
+number={}, 
+pages={1336-1341}, 
+keywords={humanoid robots;learning (artificial intelligence);manipulator dynamics;regression analysis;torque control;incremental learning;context-dependent dynamic internal models;robot control;robot inverse dynamic model;dynamically varying contexts;object manipulation;inverse dynamic mapping;multivalued function;input query;IMLE;online learning algorithm;multivalued regression;computed torque control;iCub humanoid robot;Context;Joints;Robots;Context modeling;Computational modeling;Adaptation models;Training}, 
+doi={10.1109/ISIC.2014.6967617}, 
+ISSN={2158-9860}, 
+month={Oct},}
+
+
+@INPROCEEDINGS{Jiang2016, 
+author={L. Jiang and H. Qiu and Z. Wu and J. He}, 
+booktitle={2016 Chinese Control and Decision Conference (CCDC)}, 
+title={Active disturbance rejection control based on adaptive differential evolution for two-wheeled self-balancing robot}, 
+year={2016}, 
+volume={}, 
+number={}, 
+pages={6761-6766}, 
+keywords={active disturbance rejection control;evolutionary computation;mobile robots;robot dynamics;Routh methods;steering systems;three-term control;Simulink;Matlab;virtual prototype technology;Adams software;robot dynamic model;tracking differentiator;nonholonomic dynamic Routh equation;nonholonomic dynamic mathematical model;Lagrange formula;steering control;self-balancing control;PID control strategy;two-wheeled self-balancing robot;ADE algorithm;adaptive differential evolution;ADRC technique;active disturbance rejection control;Wheels;Robot kinematics;Mathematical model;Mobile robots;Tuning;Torque;Two-wheeled Self-balancing Robot;Mathematical Modeling;Active Disturbance Rejection Control;Adaptive Differential Evolution Algorithm;Co-simulation}, 
+doi={10.1109/CCDC.2016.7532214}, 
+ISSN={1948-9447}, 
+month={May},}
+
+
+@INPROCEEDINGS{Ruan2014, 
+author={X. Ruan and X. Wang and X. Zhu and Z. Chen and R. Sun}, 
+booktitle={Proceeding of the 11th World Congress on Intelligent Control and Automation}, 
+title={Active disturbance rejection control of Single wheel robot}, 
+year={2014}, 
+volume={}, 
+number={}, 
+pages={4105-4110}, 
+keywords={active disturbance rejection control;mechatronics;mobile robots;nonlinear control systems;active disturbance rejection control;single wheel robot;balance control problem;nonlinear control algorithm;ADRC;ADAMS;MATLAB;flywheel balanced SWR;mechatronics system;Wheels;Mobile robots;Mathematical model;Solid modeling;Equations;Three-dimensional displays;Single Wheel Robot;ADRC (active disturbance rejection control technique);Robustness;ADAMS}, 
+doi={10.1109/WCICA.2014.7053403}, 
+ISSN={}, 
+month={June},}
+
+
+@INPROCEEDINGS{Wei2017, 
+author={D. Wei and C. Ren and M. Zhang and X. Li and S. Ma and C. Mu}, 
+booktitle={IECON 2017 - 43rd Annual Conference of the IEEE Industrial Electronics Society}, 
+title={Position/force control of a holonomic-constrained mobile manipulator based on active disturbance rejection control}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={6751-6756}, 
+keywords={active disturbance rejection control;control system synthesis;force control;manipulator dynamics;mobile robots;observers;position control;uncertain systems;active disturbance rejection control;holonomic constrained mobile manipulator;uncertainties;control design;external disturbances;position control;control system robustness;force control;Lagrange formulation;mobile manipulator dynamics;linear extended state observer;control system stability;Mobile communication;Manipulator dynamics;Kinetic energy;Force;Mathematical model;Active disturbance rejection control;holonomic constraint;position/force control}, 
+doi={10.1109/IECON.2017.8217179}, 
+ISSN={}, 
+month={Oct},}
+
+@article{bature2014comparison,
+  title={A comparison of controllers for balancing two wheeled inverted pendulum robot},
+  author={Bature, Amir A and Buyamin, Salinda and Ahmad, Mohamed N and Muhammad, Mustapha},
+  journal={International Journal of Mechanical \& Mechatronics Engineering},
+  volume={14},
+  number={3},
+  pages={62--68},
+  year={2014}
+}
+
+@article{khosla2013performance,
+  title={Performance evaluation of various control techniques for inverted pendulum},
+  author={Khosla, Anita and Leena, G and Soni, MK},
+  journal={Performance Evaluation},
+  volume={3},
+  number={4},
+  pages={1096--1102},
+  year={2013},
+  publisher={Citeseer}
+}
+
+@article{DART,
+  title={DART: Dynamic Animation and Robotics Toolkit},
+  author={Jeongseok Lee and Michael X. Grey and Sehoon Ha and Tobias Kunz and Sumit Jain and Yuting Ye and Siddhartha S. Srinivasa and Mike Stilman and C. Karen Liu},
+  journal={Journal of Open Source Software},
+  volume={3},
+  number={22},
+  year={2018},
+  doi={https://doi.org/10.21105/joss.00500}  
+}
+
+
+@INPROCEEDINGS{Stilman2010,
+author={M. Stilman and J. Olson and W. Gloss},
+booktitle={2010 IEEE International Conference on Robotics and Automation},
+title={Golem Krang: Dynamically stable humanoid robot for mobile manipulation},
+year={2010},
+volume={},
+number={},
+pages={3304-3309},
+keywords={humanoid robots;manipulator dynamics;manipulators;mobile robots;stability;Golem Krang;dynamically stable humanoid robot;mobile manipulation;humanoid torso;spine rotation;autonomous standing;static dynamic transformations;Humanoid robots;Humans;Torso;Mobile robots;Robot kinematics;Manipulator dynamics;Robust stability;Robotics and automation;Wheels;Orbital robotics;humanoid robot;dynamic stability;static stability;autonomous standing;robot design},
+doi={10.1109/ROBOT.2010.5509593},
+ISSN={1050-4729},
+month={May},}
+
+@Comment{jabref-meta: databaseType:bibtex;}

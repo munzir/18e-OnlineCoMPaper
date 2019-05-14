@@ -10,8 +10,11 @@
 # TeX File
 !onlinecom.tex
 
-# Bib Files
+# Bib File
 !onlinecom.bib
+
+# Figures
+!figs/
 
 # IEEE style files
 !ieeeconf.cls
